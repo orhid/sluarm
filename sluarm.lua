@@ -19,12 +19,12 @@ local stringify_params = function (params)
 end
 
 sluarm.srun = function (command, params)
-  local jobid = os.capture('srun' .. stringify_params(params) .. command):gsub('[^%d]', '')
+  local jobid = os.capture('srun' .. stringify_params(params) .. ' ' .. command):gsub('[^%d]', '')
   return jobid
 end
 
 sluarm.sbatch = function (command, params)
-  local jobid = os.capture('sbatch' .. stringify_params(params) .. command):gsub('[^%d]', '')
+  local jobid = os.capture('sbatch' .. stringify_params(params) .. ' ' .. command):gsub('[^%d]', '')
   return jobid
 end
 
