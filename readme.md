@@ -8,7 +8,7 @@ both commands `sluarm.sbatch` and `sluarm.srun` take two arguments: the command 
 ```lua
 local params = {}
 params.time = '00:36:00'
-params.job-name = 'example-job'
+params.job_name = 'example-job'
 params.nodes = '3'
 
 local sluarm = require 'sluarm'

@@ -13,7 +13,7 @@ end
 local stringify_params = function (params)
   local output = ''
   for key, value in pairs(params) do
-    output = output .. ' --' .. key .. ' ' .. value
+    output = output .. ' --' .. key:gsub('_', '-') .. ' ' .. value
   end
   return output
 end
