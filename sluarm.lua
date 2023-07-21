@@ -29,7 +29,8 @@ sluarm.sbatch = function (command, params)
 end
 
 sluarm.status = function (jobid)
-  os.capture('sacct -nPX -o State -j ' .. jobid)
+  local stat = os.capture('sacct -nPX -o State -j ' .. jobid)
+  return stat
 end
 
 return sluarm
